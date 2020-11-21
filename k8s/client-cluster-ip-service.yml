@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: web
+  ports:  # There is no external port as that is done by ingress_controllers
+    - port: 3000 # This is how other services get to client
+      targetPort: 3000   # This is where client is running
