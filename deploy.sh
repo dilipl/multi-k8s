@@ -12,6 +12,6 @@ docker push dilipl/multi-worker:$SHA
 #Apply to K8s cluster. We are already logged in and have specified all info in travis.yml
 kubectl apply -f k8s
 # Deploy the latest
-kubectl set image deployments/server-deployment.yml server=dilipl/multi-server:$SHA
-kubectl set image deployments/client-deployment.yml client=dilipl/multi-client:$SHA
-kubectl set image deployments/worker-deployment.yml worker=dilipl/multi-worker:$SHA
+kubectl set image deployment/server-deployment.yml server=dilipl/multi-server:$SHA
+kubectl set image deployment/client-deployment.yml client=dilipl/multi-client:$SHA
+kubectl set image deployment/worker-deployment.yml worker=dilipl/multi-worker:$SHA
